@@ -1,0 +1,22 @@
+div ul{
+    list-style-type: none;
+}
+div ul li{
+    background-color: red;
+    width: 200px;
+    border: 2px solid white;
+    height: 50px;
+    line-height: 150px;
+    text-align: center;
+    float: left;
+}
+div ul li:hover{
+    background-color: aqua;
+}
+div ul li ul li{
+    display: none;
+    color: black;
+}
+div ul li:hover ul li{
+    display: block;
+}

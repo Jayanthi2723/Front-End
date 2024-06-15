@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #c1{
+            text-decoration: none;
+            color: black;
+            border-radius:900%;
+            background-color: grey;
+            border: 2px solid black;
+            padding: 6px;
+            margin: 2px;
+            float: left;
+        }
+        #c2{
+            text-decoration: none;
+            color: black;
+            border-radius:900%;
+            background-color: rgb(25, 243, 25);
+            border: 2px solid black;
+            padding: 6px;
+            margin: 2px;
+            float: left;
+        }
+        #c3{
+            text-decoration: none;
+            color: black;
+            border-radius:900%;
+            background-color: red;
+            border: 2px solid black;
+            padding: 6px;
+            margin: 2px;
+            float: left;
+        }
+        #c4{
+            text-decoration: none;
+            color: black;
+            border-radius:900%;
+            background-color: yellow;
+            border: 2px solid black;
+            padding: 6px;
+            margin: 2px;
+            float: left;
+        }
+        
+    </style>
+</head>
+<body>
+    <form action="www.google.com" onsubmit="return vali()"></form>
+    <fieldset>
+        <legend>J-Spiders Admission form</legend>
+
+        <p>date <input type="date"></p>
+            <h3 id="date"></h3>
+
+        <p>Name: <input type="text"></p>
+        <h3 id="name"></h3>
+        
+
+        <p>Email: <input type="email"></p>
+        <h3 id="email"></h3>
+
+        <p>Phone: <input type="text"></p>
+        <h3 id="phone"></h3>
+
+        <p for="gender">GENDER:
+            <input type="radio" name="gender"> MALE
+            <input type="radio" name="gender"> FEMALE
+            <input type="radio" name="gender"> OTHERS</p>
+                <h3 id="gender"></h3>
+
+        <label for="yop">Year of Passout:</label>
+        <input type="radio" name="yop">  2018
+        <input type="radio" name="yop">  2019
+        <input type="radio" name="yop">  2020
+        <input type="radio" name="yop">  2021
+
+        <p>percentage: <input type="text">%</p>
+        <h3 id="per"></h3>
+        <br>
+
+        <input type="submit" value="pyspiders" class="button1" disabled style="background-color:rgb(163, 237, 237); "> 
+            <input type="submit" value="jspiders" class="button2" disabled style="background-color:salmon">
+            <input type="submit" value="qspiders" class="button3" disabled style="background-color:goldenrod">
+            <input type="submit" value="Mspiders" class="button4" disabled style="background-color:rgb(149, 131, 251)">
+            <br><br>
+
+
+        
+
+        <a id="c1" href="">jspider</a>
+        <a id="c2" href="">qspider</a>
+        <a id="c3" href="">pyspider</a>
+        <a id="c4" href="">Mspider</a>
+
+        
+    </fieldset>
+    </form>
+
+    <script>
+        function vali()
+{
+    var inputtag=document.getElementsByTagName("input")
+    if(inputtag[0].value=="")
+    {
+        let x=document.getElementById("date")
+        x.innerHTML="please select the date"
+        x.style.color="red"
+        return false
+    }
+    else if(inputtag[1].value=="")
+    {
+        let x=document.getElementById("name")
+        x.innerHTML="please provide name"
+        x.style.color="red"
+        return false
+    }
+    else if(inputtag[2].value=="")
+    {
+        let x=document.getElementById("email")
+        x.innerHTML="please provide proper mail id"
+        x.style.color="red"
+        return false
+
+    }
+    else if(inputtag[3].value=="")
+    {
+        let x=document.getElementById("phone")
+        x.innerHTML="please provide phone number"
+        x.style.color="red"
+        return false
+    }
+     
+    else if(inputtag[4].value!= Male && inputtag.value!=Female)
+    {
+        let x=document.getElementById("gender")
+        x.innerHTML="please select the gender"
+        x.style.color="red"
+        return false
+    }
+    else if(inputtag[5].value=="")
+    {
+        let x=document.getElementById("per")
+        x.innerHTML="please provide percentage"
+        x.style.color="red"
+        return false
+    }
+
+}
+
+var agree=document.getElementById("agree")
+    agree.addEventListener('change', function(){
+        
+        let reg=document.getElementById("reg")
+        if(agree.checked)
+        {
+            reg.removeAttribute("disabled")
+        }
+        else{
+            reg.setAttribute("disabled","disabled")
+        }
+    })
+    </script>
+</body>
+</html>

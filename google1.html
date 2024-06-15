@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="https://www.facebook.com" onsubmit="return vali()">
+    <fieldset>
+        <legend>fill the form</legend>
+
+        <p>username <input type="text"></p>
+        <h3 id="username"></h3>
+        
+
+        <p>Email <input type="email"></p>
+        <h3 id="email"></h3>
+
+        <p>password <input type="password"></p>
+        <h3 id="password"></h3>
+
+        <p>confirm password <input type="password"></p>
+        <h3 id="confirm_password"></h3>
+
+        <p>
+            <input type="checkbox" id="agree">
+            <label for="agree">i agree terms and conditions</label>
+        </p>
+        <input type="submit" value="Register" id="register" disabled>
+    </fieldset>
+</form>
+
+
+    <script src="./app2.js"></script>
+    <script>
+        function vali()
+        {
+            var inputtag=document.getElementsByTagName("input")
+            if( inputtag[0].value!="jaya")
+            {
+                let x=document.getElementById("username")
+                x.innerHTML="username is invalid"
+                x.style.color="red"
+                return false;
+            }
+            else if( inputtag[1].value!="jaya@gmail.com")
+            {
+                let x=document.getElementById("email")
+                x.innerHTML="Email is invalid"
+                x.style.color="red"
+                return false;
+            }
+            else if( inputtag[2].value!="1234")
+            {
+                let x=document.getElementById("password")
+                x.innerHTML="password is invalid"
+                x.style.color="red"
+                return false;
+            }
+            else if( inputtag[3].value!=inputtag[2].value)
+            {
+                let x=document.getElementById("confirm_password")
+                x.innerHTML="password is not confirming"
+                x.style.color="red"
+                return false;
+            }
+        }
+
+
+
+
+
+
+
+        var agree=document.getElementById("agree")
+ 
+ agree.addEventListener('change',function()
+ {
+     let register=document.getElementById("register");
+     if(agree.checked)
+     {
+         register.removeAttribute("disabled")
+     }
+     else
+     {
+         register.setAttribute("disabled","disabled")
+     }
+ }
+ ) 
+    </script>
+</body>
+</html>

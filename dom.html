@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul_list">
+        <li>java</li>
+        <li id="li_list">j2ee</li>
+        <li>react js</li>
+        <li>hibernet</li>
+        <li>node</li>
+    </ul>
+    <script>
+        var tag=document.createElement("li")
+        tag.textContent="WEB TECH"
+        console.log(tag)
+
+        var new_tag=document.getElementById("li_list")
+        new_tag.appendChild(tag)
+    </script>
+</body>
+</html>

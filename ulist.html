@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul id="ul">
+            <li>Java</li>
+            <li>Java-Script</li>
+            <li>React-Js</li>
+            <li>Hibernet</li>
+            <li>Spring</li>
+        </ul>
+    </div>
+
+    <div id="d2">
+
+    </div>
+
+
+    <script>
+        //targer ul element
+        var ul=document.getElementById("ul")
+        console.log(ul)
+        //target div tag by tagname selector
+        var div=document.getElementsByTagName("div")
+        //create copy of ul element along with child
+        var cloneUl=ul.cloneNode(false)
+        console.log(cloneUl)
+        //append created copy to the 2nd div tag
+        div[1].appendChild(cloneUl)
+    </script>
+</body>
+</html>

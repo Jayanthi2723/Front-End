@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./form.css">
+    <style>
+
+
+        #button1{
+    border-width: 10px;
+    border-radius:50%;
+    color: black;
+    padding: 10px;
+    margin: 4px 2px;
+    font-size: 16px;
+
+}
+#button2{
+    border-width: 10px;
+border-radius:50%;
+color: black;
+padding: 10px;
+margin: 4px 2px;
+font-size: 16px;
+
+}
+#button3{
+    border-width: 10px;
+    border-radius:50%;
+    color: black;
+    padding: 10px;
+    margin: 4px 2px;
+    font-size: 16px;
+}
+#button4{
+    border-width: 10px;
+border-radius:50%;
+color: black;
+padding: 10px;
+margin: 4px 2px;
+font-size: 16px;
+}
+    </style>
+
+</head>
+<body>
+    <form action="www.google.com" onsubmit="return vali()">
+        <fieldset>
+            <legend>Jspiders Admission form</legend>
+            <p>date <input type="date"></p>
+            <h3 id="date"></h3>
+
+            <p>Name <input type="text"></p>
+            <h3 id="name"></h3>
+
+            <p>Email <input type="email"></p>
+            <h3 id="email"></h3>
+
+            <p>phone <input type="phone"></p>
+            <h3 id="phone"></h3>
+
+            <p for="gender">GENDER:
+        <input type="radio" name="gender"> MALE
+        <input type="radio" name="gender"> FEMALE
+        <input type="radio" name="gender"> OTHERS</p>
+            <h3 id="gender"></h3>
+            
+            
+            <p for="year of passing">year of passing
+             <input type="radio" name="yop">2018
+            <input type="radio" name="yop">2019
+            <input type="radio" name="yop">2020
+            <input type="radio" name="yop">2021
+            <input type="radio" name="yop">2022
+            </p>
+            <p>percentage <input type="number">%</p>
+            <h3 id="per"></h3>
+            
+            <!-- <p>
+                <input type="checkbox" id="agree">
+                <label for="agree">i agree with the terms and conditions</label>
+            </p> -->
+            
+    
+
+            <input type="submit" value="pyspiders" id="button1" disabled >
+             <!-- style="background-color:rgb(163, 237, 237); " -->
+            <input type="submit" value="jspiders" id="button2" disabled >
+             <!-- style="background-color:salmon" -->
+            <input type="submit" value="qspiders" id="button3" disabled >
+            <!-- style="background-color:goldenrod" -->
+            <input type="submit" value="Mspiders" id="button4" disabled >
+            <!-- style="background-color:rgb(149, 131, 251)" -->
+            <br><br>
+            <!-- <input type="submit" value="Register" id="reg" disabled> -->
+
+        </fieldset>
+    </form>
+    <script src="./form.js"></script>
+    <script>
+        function vali()
+{
+    var inputtag=document.getElementsByTagName("input")
+    if(inputtag[0].value=="")
+    {
+        let x=document.getElementById("date")
+        x.innerHTML="please select the date"
+        x.style.color="red"
+        return false
+    }
+    else if(inputtag[1].value=="jaya")
+    {
+        let x=document.getElementById("name")
+        x.innerHTML="please provide name"
+        x.style.color="red"
+        return false
+    }
+    else if(inputtag[2].value=="jaya@gmail.com")
+    {
+        let x=document.getElementById("email")
+        x.innerHTML="please provide proper mail id"
+        x.style.color="red"
+        return false
+
+    }
+    else if(inputtag[3].value=="1234567")
+    {
+        let x=document.getElementById("phone")
+        x.innerHTML="please provide phone number"
+        x.style.color="red"
+        return false
+    }
+     
+    else if(inputtag[4].value!= Male && inputtag.value!=Female)
+    {
+        let x=document.getElementById("gender")
+        x.innerHTML="please select the gender"
+        x.style.color="red"
+        return false
+    }
+    else if(inputtag[5].value=="98")
+    {
+        let x=document.getElementById("per")
+        x.innerHTML="please provide percentage"
+        x.style.color="red"
+        return false
+    }
+
+}
+    var agree=document.getElementById("agree")
+    agree.addEventListener('change', function(){
+        
+        let button1=document.getElementById("button1")
+        if(agree.checked)
+        {
+            button1.removeAttribute("disabled")
+        }
+        else{
+            button1.setAttribute("disabled","disabled")
+        }
+    })
+    </script>
+</body>
+</html>
+
+
+
